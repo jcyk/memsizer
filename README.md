@@ -8,7 +8,7 @@ The code is for our EMNLP2022 paper: [Linearizing Transformer with Key-Value Mem
 
 Our code is based on [fairseq](https://github.com/facebookresearch/fairseq). You can install fairseq via `pip install fairseq==0.10.0`
 
-We provide the implementation of Memsiser in a plug-in module ([src](./src)). In order to import the module, and make Memsizer available to fairseq, add `--user-dir src` to fairseq command lines. See the following examples.
+We provide the implementation of Memsizer in a plug-in module ([src](./src)). In order to import the module, and make Memsizer available to fairseq, add `--user-dir src` to fairseq command lines. See the following examples.
 
 
 ## Examples
@@ -27,6 +27,6 @@ parser.add_argument('--decoder-use-rfa', action='store_true', help='use memsizer
 parser.add_argument('--causal-proj-dim', type=int, default=4, help='the number of memory slots in causal attention.')
 parser.add_argument('--cross-proj-dim', type=int, default=32, help='the number of memory slots in non-causal attention.')
 
-parser.add_argument('--q-init-scale', type=float, metavar='D', default=8.0, help='init scale for \Phi.')
-parser.add_argument('--kv-init-scale', type=float, metavar='D', default=8.0, help='init scale for W_l and W_r.')
+parser.add_argument('--q-init-scale', type=float, default=8.0, help='init scale for \Phi.')
+parser.add_argument('--kv-init-scale', type=float, default=8.0, help='init scale for W_l and W_r.')
 ```
